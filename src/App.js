@@ -6,6 +6,7 @@ import PrivateRoute from "./components/PrivateRoute";
 //화면 
 import Inform from "./pages/Inform";
 import Welcome from "./pages/Welcome";
+import Login from "./pages/login";
 
 const App = () => (
   // <Provider store={store}>
@@ -14,6 +15,7 @@ const App = () => (
       <div className="container">
       <Routes>
           <Route exact path="/" element={<Welcome />} />
+          <Route exact path="/login" element={<Login />} />          
       </Routes>
       <PrivateRoute>
           <Inform/>
