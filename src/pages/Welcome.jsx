@@ -1,16 +1,12 @@
 import { useKeycloak } from "@react-keycloak/web";
-import { useNavigate } from "react-router-dom"
 
 const Welcome = () => {
   const { keycloak } = useKeycloak();
-  const navigate = useNavigate();
 
   const hyenmood = () => {
     window.open('https://www.hyenmood.com', '_blank');
   }
-  const Login = () => {
-    navigate("/login");
-  }  
+
   return (
   <div className="jumbotron">
     <h4>환영합니다. <br/>본 페이지는 Keycloak인증을 React로 구현한 샘플 화면 입니다.</h4>
@@ -39,13 +35,6 @@ const Welcome = () => {
         )}     
        
     </p>
-    <p>
-    {!keycloak.authenticated && (
-          <button className="btn btn-lg btn-warning" 
-          onClick={() => Login()}>별도 로그인 화면 
-        </button>
-      )}     
-    </p>   
     <p>     
     {!!keycloak.authenticated && (
           <button className="btn btn-lg btn-warning" 

@@ -15,6 +15,7 @@ const Menu = () => {
     }).catch(function() {
         alert('Failed to load user profile');
     });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
 },[])
 
   return (
